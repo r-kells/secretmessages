@@ -1,0 +1,58 @@
+{{template "base" .}}
+{{define "content"}}
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <div class="column is-three-fifths is-offset-one-fifth has-text-centered">
+                <h1 class="title">
+                    Create a secret
+                </h1>
+                <h2 class="subtitle">
+                    Then copy your secret key to decode later
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="column is-three-fifths is-offset-one-fifth">
+            <form action="/" method="POST">
+                <div class="field has-addons has-addons-centered">
+                    <div class="control" name="Direction">
+                        <div class="select is-primary">
+                            <select name="Direction">
+                                {{if eq .Direction "decrypt"}}
+                                <option value="encrypt">Encrypt</option>
+                                <option value="decrypt">Decrypt</option>
+                                {{else}}
+                                    <option value="decrypt">Decrypt</option>
+                                    <option value="encrypt">Encrypt</option>
+                                    {{end}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button type="submit" class="button is-primary">Convert</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Secret Key</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Remember this key!" name="Secret" {{if .Secret}}
+                            value="{{.Secret}}" {{end}}>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-key"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Message</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Ex. Sarah kissed Jim..." name="Message">{{if .Message}}{{.Message}}{{end}}</textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+{{end}}
