@@ -9,7 +9,7 @@ import (
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/r-kells/secretmessages/controllers"
+	"github.com/r-kells/secretmessages/internal/pkg/controllers"
 )
 
 func main() {
