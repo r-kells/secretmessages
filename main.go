@@ -22,5 +22,5 @@ func main() {
 	router.GET("/", index.Landing)
 	router.POST("/", index.Convert)
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":3000", router))
 }
