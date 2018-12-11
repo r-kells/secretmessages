@@ -15,4 +15,6 @@ COPY --from=builder /secretmessages/application .
 COPY --from=builder /secretmessages/internal/pkg/views/layouts internal/pkg/views/layouts
 COPY --from=builder /secretmessages/internal/pkg/views/pages internal/pkg/views/pages
 
+EXPOSE 5000
+
 CMD ["./application"]
