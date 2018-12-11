@@ -1,4 +1,4 @@
-module github.com/r-kells/secretmessages
+module secretmessages
 
 require (
 	github.com/gorilla/schema v1.0.2

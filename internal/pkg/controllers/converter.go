@@ -3,10 +3,11 @@ package controllers
 import (
 	"net/http"
 
+	"secretmessages/internal/pkg/views"
+	"secretmessages/pkg/crypto"
+	"secretmessages/pkg/crypto/aes"
+
 	"github.com/julienschmidt/httprouter"
-	"github.com/r-kells/secretmessages/internal/pkg/views"
-	"github.com/r-kells/secretmessages/pkg/crypto"
-	"github.com/r-kells/secretmessages/pkg/crypto/aes"
 )
 
 type Index struct {
@@ -21,7 +22,7 @@ type ConverterForm struct {
 //NewIndex is called in main() and parses the templates on startup.
 func NewIndex() *Index {
 	return &Index{
-		IndexPage: views.NewView("static/index"),
+		IndexPage: views.NewView("pages/index"),
 	}
 }
 

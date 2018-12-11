@@ -8,8 +8,9 @@ import (
 	"log"
 	"net/http"
 
+	"secretmessages/internal/pkg/controllers"
+
 	"github.com/julienschmidt/httprouter"
-	"github.com/r-kells/secretmessages/internal/pkg/controllers"
 )
 
 func main() {
@@ -22,5 +23,5 @@ func main() {
 	router.GET("/", index.Landing)
 	router.POST("/", index.Convert)
 
-	log.Fatal(http.ListenAndServe(":3000", router))
+	log.Fatal(http.ListenAndServe(":5000", router))
 }

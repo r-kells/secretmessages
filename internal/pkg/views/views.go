@@ -35,7 +35,6 @@ func (v *View) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 // appending common template files to nested templates.
 func NewView(files ...string) *View {
 	buildFullPath(files)
-
 	files = append(files, layoutFiles()...)
 	t, err := template.ParseFiles(files...)
 	if err != nil {

@@ -7,7 +7,7 @@ import (
 	"encoding/base64"
 	"io"
 
-	"github.com/r-kells/secretmessages/pkg/crypto"
+	"secretmessages/pkg/crypto"
 )
 
 func Encrypt(key crypto.Secret, msg crypto.Message) (secretMsg string, err error) {
